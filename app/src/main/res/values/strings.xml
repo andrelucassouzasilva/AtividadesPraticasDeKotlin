@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Atividades praticas aulas</string>
+
+    <string name="area_format">Área: %.2f (unid²)</string>
+
+    <string name="resultado_tensao">Tensão: %.2f V</string>
+    <string name="resultado_corrente">Corrente: %.2f A</string>
+    <string name="resultado_resistencia">Resistência: %.2f Ω</string>
+</resources>
