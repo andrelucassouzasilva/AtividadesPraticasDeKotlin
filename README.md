@@ -394,7 +394,7 @@ git log --oneline
 ```
 
 ```
-<novo commit> Restaura documentacao completa do README (atividades e versionamento)
+47523bb Restaura documentacao completa do README (atividades e versionamento)
 b1efb15 Simplify README by removing project details
 74329b3 Documenta o processo de versionamento e comandos Git utilizados
 963aa55 Adiciona documentacao do projeto e das atividades no README
