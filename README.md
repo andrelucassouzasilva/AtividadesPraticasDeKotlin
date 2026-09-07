@@ -279,3 +279,96 @@ Simula o abastecimento com um combustível selecionado em um `Spinner` (Gasolina
 2. Aguarde a sincronização do Gradle.
 3. Selecione um emulador ou dispositivo físico.
 4. Execute o módulo `app` (Run ▶).
+
+---
+
+## Controle de versionamento (Git/GitHub)
+
+O versionamento do projeto foi feito com **Git**, e o repositório remoto foi hospedado no **GitHub**, em:
+[https://github.com/andrelucassouzasilva/AtividadesPraticasDeKotlin](https://github.com/andrelucassouzasilva/AtividadesPraticasDeKotlin)
+
+Abaixo está o passo a passo real utilizado, com os comandos executados no terminal.
+
+### 1. Inicialização do repositório local
+
+O projeto já existia (criado no Android Studio) mas ainda não era um repositório Git. O primeiro passo foi iniciá-lo:
+
+```bash
+git init
+```
+
+O projeto já contava com um arquivo `.gitignore` (gerado pelo próprio Android Studio), responsável por excluir do versionamento pastas e arquivos que não devem ir para o repositório, como `/build`, `.gradle`, `local.properties` e arquivos `.iml`.
+
+### 2. Adicionando os arquivos e criando o primeiro commit
+
+```bash
+git add -A
+git status --short
+```
+
+O `git status --short` foi usado para conferir, antes de commitar, se nenhum arquivo de build ou configuração sensível (como `local.properties`) havia sido adicionado por engano.
+
+```bash
+git commit -m "Commit inicial: atividades praticas de Kotlin (Android Studio)"
+```
+
+### 3. Conectando ao repositório remoto no GitHub
+
+```bash
+git remote add origin https://github.com/andrelucassouzasilva/AtividadesPraticasDeKotlin.git
+git branch -M main
+git remote -v
+```
+
+- `git remote add origin` associa o repositório local ao repositório remoto criado no GitHub.
+- `git branch -M main` garante que a branch principal se chame `main`.
+- `git remote -v` confirma que o remoto foi configurado corretamente (fetch/push).
+
+### 4. Enviando o primeiro commit ao GitHub
+
+```bash
+git push -u origin main
+```
+
+O `-u` (`--set-upstream`) associa a branch local `main` à branch remota `main`, permitindo que os próximos `git push`/`git pull` sejam feitos sem precisar informar `origin main` novamente.
+
+### 5. Criação da documentação (README) e novo commit
+
+Após o primeiro push, o arquivo `README.md` foi criado com a documentação do projeto e de todas as atividades. Esse novo arquivo passou pelo mesmo ciclo de versionamento:
+
+```bash
+git add README.md
+git status --short
+git commit -m "Adiciona documentacao do projeto e das atividades no README"
+git push
+```
+
+Como a branch `main` já estava com upstream configurado (passo 4), o `git push` (sem parâmetros) já soube automaticamente para onde enviar o commit.
+
+### Histórico de commits
+
+```bash
+git log --oneline
+```
+
+```
+963aa55 Adiciona documentacao do projeto e das atividades no README
+e27d39f Commit inicial: atividades praticas de Kotlin (Android Studio)
+```
+
+### Resumo dos comandos utilizados
+
+| Comando | Finalidade |
+|---|---|
+| `git init` | Inicializa o repositório Git local |
+| `git add -A` / `git add <arquivo>` | Adiciona arquivos à área de stage |
+| `git status --short` | Verifica o que será commitado antes de confirmar |
+| `git commit -m "mensagem"` | Cria um commit com as mudanças em stage |
+| `git remote add origin <url>` | Associa o repositório local a um repositório remoto no GitHub |
+| `git branch -M main` | Renomeia/garante a branch principal como `main` |
+| `git remote -v` | Lista os remotos configurados |
+| `git push -u origin main` | Envia o primeiro commit e define o upstream da branch |
+| `git push` | Envia novos commits para o remoto já configurado |
+| `git log --oneline` | Exibe o histórico resumido de commits |
+
+**[ COLE AQUI O PRINT: Repositório no GitHub (lista de commits/arquivos) ]**
